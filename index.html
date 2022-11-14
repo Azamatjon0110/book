@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css">
+  <title>Books</title>
+</head>
+<body>
+
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between py-4">
+      <h2 class="logo-title">Online<span class="book-color">Book</span></h2>
+      <button class="btn btn-light border border-1 js-save-btn">My save books</button>
+    </div>
+    <div class="form-wrapper py-4 rounded-2 bg-orange px-3">
+      <form class="js-form" action="#" method="POST">
+        <div class="d-flex">
+
+          <input class="form-control me-2 js-title" type="text" placeholder="Enter book name">
+
+          <select class="sort-select me-2 form-select">
+            <option value="a-z">A-Z</option>
+            <option value="z-a">Z-A</option>
+            <option value="oldest">Oldest</option>
+            <option value="latest">Latest</option>
+          </select>
+          <input class="form-control js-year-min me-2" type="number" placeholder="Min year">
+          <input class="form-control js-year-max me-2" type="number" placeholder="Max year">
+          <button class="btn btn-success" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+
+    <ul class="result-box list-unstyled rounded-2 bg-orange row mt-5 py-3 mx-1">
+
+    </ul>
+  </div>
+
+
+  <template class="book-template">
+    <li class="list-item col-12 col-md-6 col-lg-4 col-xl-3 mb-3">
+      <div class="bg-white rounded-2 p-2 d-flex flex-column justify-content-between list-box">
+        <img class="book-img" src="" alt="">
+        <div class="text-center">
+          <h3 class="book-title text-secondary">sda</h3>
+        </div>
+        <div class="d-flex justify-content-between mb-3">
+          <p class="book book-year">asd</p>
+          <p class="book book-page">asd</p>
+          <p class="book book-lang">asdas</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <a class="more-info text-decoration-none" href="">About book</a>
+          <button class="add-bookmark btn" type="button">Add bookmark</button>
+        </div>
+      </div>
+    </li>
+  </template>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script src="./books.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>
