@@ -95,3 +95,8 @@ body{
   font-size: 0%;
   background-image: url("/icons/star.svg");
 }
+
+.wrapper-box{
+  width: 85%;
+  margin: 0 auto;
+}
