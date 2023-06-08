@@ -18,6 +18,7 @@ function languageFunction(languageArray) {
 	const language = [new Set(languageArray.language)];
 	languageArray.forEach((element) => {
 		if (!language.includes(element.language)) {
+			console.log(element);
 			language.push(element.language);
 		}
 	});
@@ -52,7 +53,7 @@ function renderBook(array, list, regex = '') {
 		templateBook.querySelector('.book-page').textContent = elem.pages;
 		templateBook.querySelector('.book-lang').textContent = elem.language;
 		templateBook.querySelector('.js-author-text').textContent = elem.author;
-		templateBook.querySelector('.more-info').src = elem.link;
+		templateBook.querySelector('.more-info').href = elem.link;
 		templateBook.querySelector('.add-bookmark').dataset.id = elem.link;
 		fragment.appendChild(templateBook);
 	});
@@ -66,7 +67,8 @@ function renderBookList(array, list) {
 		templateBook.querySelector('.book-img').src = elem.imageLink;
 		templateBook.querySelector('.book-img').alt = elem.title;
 		templateBook.querySelector('.book-title').textContent = elem.title;
-		templateBook.querySelector('.more-info').src = elem.link;
+		templateBook.querySelector('.more-info').href = elem.link;
+		console.log(elem.link);
 		templateBook.querySelector('.delete-bookmark').dataset.id = elem.link;
 		fragment.appendChild(templateBook);
 	});
@@ -187,7 +189,8 @@ bookList.addEventListener('click', (evt) => {
 bookMarkList.addEventListener('click', (evt) => {
 	if (evt.target.matches('.delete-bookmark')) {
 		const addbtn = evt.target.dataset.id;
-		const addobj = books.findIndex((item) => item.link == addbtn);
+		console.log(addbtn);
+		const addobj = booksListArray.findIndex((item) => item.link == addbtn);
 		booksListArray.splice(addobj, 1);
 		renderBookList(booksListArray, bookMarkList);
 	}
