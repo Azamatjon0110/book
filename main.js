@@ -1,3 +1,6 @@
+
+
+AOS.init();
 const elForm  = document.querySelector(".js-form");
 const elInput = elForm.querySelector(".js-title");
 const sortSelect = elForm.querySelector(".sort-select");
@@ -13,13 +16,15 @@ const bookListTemp = document.querySelector(".bookmark-template").content;
 const fragment = new DocumentFragment();
 
 function languageFunction (languageArray){
-  const language = [];
   const languageFrag  = new DocumentFragment();
+  const language = [new Set(languageArray.language)];
   languageArray.forEach(element => {
-    if(!language.includes(element.language)){
+  //   if(!language.includes(element.language)){
       language.push(element.language);
-    }
+  //   }
   });
+  // language
+
   language.sort();
   language.forEach(title => {
     const selectOption = document.createElement("option");
